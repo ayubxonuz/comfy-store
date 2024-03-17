@@ -7,10 +7,9 @@ function HomeLayout() {
     <>
       <Header />
       <Navbar />
-      <div className="max-container">
-        <main>1</main>
+      <main className="max-container">
         <Outlet />
-      </div>
+      </main>
     </>
   )
 }

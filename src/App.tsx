@@ -1,4 +1,4 @@
-import {RouterProvider, createBrowserRouter} from "react-router-dom"
+import {Navigate, RouterProvider, createBrowserRouter} from "react-router-dom"
 import {
   About,
   Cart,
@@ -11,11 +11,16 @@ import {
   Register,
   SingleProduct,
 } from "./pages"
+import {useSelector} from "react-redux"
+import {RootState} from "./redux/store"
 function App() {
+  const {userData} = useSelector((store: RootState) => store.user)
+  console.log(userData)
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <HomeLayout />,
+      element: userData ? <HomeLayout /> : <Navigate to={"/signup"} />,
       children: [
         {
           index: true,
@@ -49,11 +54,11 @@ function App() {
     },
     {
       path: "/login",
-      element: <Login />,
+      element: userData ? <Navigate to={"/"} /> : <Login />,
     },
     {
       path: "/signup",
-      element: <Register />,
+      element: userData ? <Navigate to={"/"} /> : <Register />,
     },
   ])
   return <RouterProvider router={router} />
