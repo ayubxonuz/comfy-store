@@ -43,11 +43,9 @@ function Register() {
         setLoading(false)
         dispatch(setUser(res))
         toast.success("You have successfully registered")
-        console.log(res)
       } catch (error: any) {
         setLoading(false)
         toast.error(error.message)
-        console.log(error)
       }
     } else {
       toast.warning("Please enter information")

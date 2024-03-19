@@ -38,11 +38,10 @@ function Login() {
         }
         const res: userData = await req.json()
         dispatch(setUser(res))
-        console.log(res)
         setLoading(false)
+        toast.success("Welcome back")
       } catch (error: any) {
         toast.error(error.message)
-        console.log(error)
         setLoading(false)
       }
     } else {
@@ -91,6 +90,7 @@ function Login() {
           <button
             onClick={() => {
               dispatch(setUser("guest"))
+              toast.success("Welcome guest user")
             }}
             type="button"
             className="w-full uppercase btn btn-active btn-neutral"

@@ -15,7 +15,6 @@ import {useSelector} from "react-redux"
 import {RootState} from "./redux/store"
 function App() {
   const {userData} = useSelector((store: RootState) => store.user)
-  console.log(userData)
 
   const router = createBrowserRouter([
     {

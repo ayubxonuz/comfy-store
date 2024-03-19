@@ -11,3 +11,38 @@ export interface userData {
     updatedAt: string
   }
 }
+
+export interface featuredInt {
+  data: {
+    data: [
+      {
+        id: string
+        attributes: {
+          title: string
+          image: string
+          price: string
+          company: string
+        }
+      }
+    ]
+  }
+  meta: {}
+}
+
+export interface singleData {
+  data: {
+    data: {
+      attributes: {
+        title: string
+        image: string
+        price: string
+        company: string
+        description: string
+        colors: string[]
+      }
+      id: number
+    }
+  }
+  amount?: number
+  meta?: {}
+}
