@@ -6,7 +6,6 @@ import {RootState} from "../redux/store"
 
 function Navbar() {
   const {selectData} = useSelector((store: RootState) => store.cart)
-  console.log(selectData)
 
   const getThemeFromLocalStorage = () => {
     return localStorage.getItem("theme") || "light"
