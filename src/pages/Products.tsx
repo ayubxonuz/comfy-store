@@ -202,7 +202,7 @@ function Products() {
                   ))}
                 </div>
               ) : (
-                <div className="grid grid-cols-3 gap-y-5 mt-5">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
                   {productData?.data.map((data) => (
                     <Link key={data.id} to={`/products/${data.id}`}>
                       <div className="card w-[330px] mx-auto bg-base-100 shadow-lg">

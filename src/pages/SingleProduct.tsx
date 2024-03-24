@@ -30,7 +30,7 @@ function SingleProduct() {
     <>
       {fetchedSingleData && (
         <>
-          <div className="grid grid-cols-2 items-center mt-12">
+          <div className="grid grid-cols-2 max-[1078px]:grid-cols-1  gap-2 items-center mt-12">
             <img
               className="h-[400px] w-[500px] rounded-lg"
               src={fetchedSingleData?.data.data.attributes.image}

@@ -69,7 +69,7 @@ function Checkout() {
       {selectData.length ? (
         <>
           <SectionTitle text="Place Your Order" />
-          <div className="grid grid-cols-2 mt-8 items-center gap-x-8 justify-between">
+          <div className="grid grid-cols-2 max-[740px]:grid-cols-1 mt-8 items-center gap-8 justify-between">
             <div className="grid gap-y-5">
               <p className="text-xl">Shipping Information</p>
               <form onSubmit={(e) => handleSubmit(e)}>
