@@ -1,5 +1,6 @@
 import {PayloadAction, createSlice} from "@reduxjs/toolkit"
 import {singleData} from "../../interface/allinterface"
+import {toast} from "sonner"
 
 interface initialState {
   selectData: singleData[]
@@ -31,10 +32,16 @@ const cartSlice = createSlice({
 
       if (index !== -1) {
         state.selectData[index] = payload
+        toast.warning("Cart has already been added")
       } else {
         state.selectData.push(payload)
+        toast.success("Cart added successfully")
       }
 
+      cartSlice.caseReducers.mathData(state)
+    },
+    clearSelectData: (state) => {
+      state.selectData = []
       cartSlice.caseReducers.mathData(state)
     },
 
@@ -59,10 +66,11 @@ const cartSlice = createSlice({
       state.selectData = state.selectData.filter(
         (data) => data.data.data.id !== payload
       )
+      toast.success("Cart removed successfully")
       cartSlice.caseReducers.mathData(state)
     },
   },
 })
 
 export default cartSlice.reducer
-export const {setSelectData, delSelectData} = cartSlice.actions
+export const {setSelectData, delSelectData, clearSelectData} = cartSlice.actions

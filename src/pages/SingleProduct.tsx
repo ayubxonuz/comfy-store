@@ -26,8 +26,6 @@ function SingleProduct() {
     }
   }
 
-  console.log(fetchedSingleData?.data.data.attributes.colors)
-
   return (
     <>
       {fetchedSingleData && (

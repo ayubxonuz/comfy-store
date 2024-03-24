@@ -78,3 +78,42 @@ export interface allData {
     }
   }
 }
+
+export interface orders {
+  data: {
+    data: [
+      {
+        attributes: {
+          address: string
+          cartItems: [
+            {
+              image: string
+              amount: number
+              cartID: string
+              company: string
+              price: string
+              productColor: string
+              productID: number
+              title: string
+            }
+          ]
+          createdAt: string
+          name: string
+          numItemsInCart: number
+          orderTotal: string
+          publishedAt: string
+          updatedAt: string
+        }
+        id: number
+      }
+    ]
+    meta: {
+      pagination: {
+        page: number
+        pageCount: number
+        pageSize: number
+        total: number
+      }
+    }
+  }
+}

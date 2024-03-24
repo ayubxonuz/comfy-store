@@ -1,5 +1,5 @@
 import {FormEvent, useState} from "react"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import FormInput from "../../components/FormInput"
 import {toast} from "sonner"
 import {useAppDispatch} from "../../redux/store"
@@ -9,6 +9,7 @@ import {userData} from "../../interface/allinterface"
 function Register() {
   const [loading, setLoading] = useState(false)
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
@@ -40,9 +41,11 @@ function Register() {
         }
 
         const res: userData = await req.json()
+        navigate("/")
         setLoading(false)
         dispatch(setUser(res))
         toast.success("You have successfully registered")
+        navigate("/")
       } catch (error: any) {
         setLoading(false)
         toast.error(error.message)

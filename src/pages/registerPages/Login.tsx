@@ -1,14 +1,34 @@
 import {FormEvent, useState} from "react"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import FormInput from "../../components/FormInput"
 import {toast} from "sonner"
 import {useAppDispatch} from "../../redux/store"
 import {setUser} from "../../redux/user/userSlice"
 import {userData} from "../../interface/allinterface"
+import {customFetch} from "../../utils/utils"
 
 function Login() {
   const [loading, setLoading] = useState(false)
+  const [loadingG, setLoadingG] = useState(false)
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+
+  const handleGuestUser = async () => {
+    try {
+      setLoadingG(true)
+      const res = await customFetch.post("/auth/local", {
+        identifier: "test@test.com",
+        password: "secret",
+      })
+      dispatch(setUser(res.data))
+      toast.success("Welcome Guest User")
+      setLoadingG(false)
+      navigate("/")
+    } catch (error: any) {
+      setLoadingG(false)
+      toast.error(error.message)
+    }
+  }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -38,6 +58,7 @@ function Login() {
         }
         const res: userData = await req.json()
         dispatch(setUser(res))
+        navigate("/")
         setLoading(false)
         toast.success("Welcome back")
       } catch (error: any) {
@@ -87,16 +108,24 @@ function Login() {
         </form>
 
         <div className="mt-3">
-          <button
-            onClick={() => {
-              dispatch(setUser("guest"))
-              toast.success("Welcome guest user")
-            }}
-            type="button"
-            className="w-full uppercase btn btn-active btn-neutral"
-          >
-            Guest user
-          </button>
+          {loadingG ? (
+            <button
+              type="button"
+              className="w-full uppercase btn btn-active btn-disabled btn-neutral"
+            >
+              Guest user <span className="loading loading-xs"></span>
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                handleGuestUser()
+              }}
+              type="button"
+              className="w-full uppercase btn btn-active btn-neutral"
+            >
+              Guest user
+            </button>
+          )}
         </div>
 
         <p className="mt-8 text-xs font-light tracking-[1px] text-center">

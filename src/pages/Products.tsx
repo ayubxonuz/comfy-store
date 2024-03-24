@@ -113,7 +113,9 @@ function Products() {
             </div>
             <div className="grid grid-cols-4 gap-x-5 items-center justify-items-center">
               <div className="w-full">
-                <p>Select price {formatPrice(selectedPrice)}</p>
+                <p className="mb-1">
+                  Select price {formatPrice(selectedPrice)}
+                </p>
                 <input
                   value={selectedPrice}
                   max={maxPrice}
@@ -126,7 +128,7 @@ function Products() {
                 />
               </div>
               <div className="text-center">
-                <p>Free Shipping</p>
+                <p className="mb-1">Free Shipping</p>
                 <input name="shipping" type="checkbox" className="checkbox" />
               </div>
               <button type="submit" className="btn btn-neutral w-full btn-sm">

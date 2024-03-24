@@ -25,10 +25,13 @@ function Navbar() {
   return (
     <div className="p-2 bg-base-200">
       <nav className="max-container flex justify-between items-center">
-        <NavLink className="btn btn-info text-base-100" to={"/"}>
+        <NavLink
+          className="btn btn-info max-[1024px]:hidden text-base-100"
+          to={"/"}
+        >
           C
         </NavLink>
-        <div className="dropdown dropdown-left">
+        <div className="dropdown dropdown-right">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
