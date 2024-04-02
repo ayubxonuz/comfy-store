@@ -117,7 +117,7 @@ function Products() {
                 </select>
               </label>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-5 items-center justify-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-2 gap-x-5 items-center justify-items-center">
               <div className="w-full">
                 <p className="mb-1 text-sm">
                   Select price {formatPrice(selectedPrice)}
@@ -156,7 +156,7 @@ function Products() {
             <>
               <div className="flex justify-between mt-5 px-4">
                 <p>{productData?.data.length} products</p>
-                <div className="flex gap-x-2">
+                <div className="sm:flex hidden gap-x-2">
                   <button
                     onClick={() => {
                       setProductContainer(false)
@@ -183,20 +183,20 @@ function Products() {
                       <div className="card bg-base-100 shadow-lg">
                         <figure
                           style={{alignItems: "flex-start"}}
-                          className="p-3 flex"
+                          className="p-3"
                         >
                           <img
                             src={data.attributes.image}
                             alt={data.attributes.title}
-                            className="rounded-xl h-[200px] w-[200px] object-cover"
+                            className="rounded-xl h-[120px] w-[130px] object-cover sm:h-[200px] sm:w-[200px]"
                           />
                           <div className="card-body  items-start text-center">
-                            <h2 className="card-title capitalize font-medium">
+                            <h2 className="card-title capitalize font-medium text-xs sm:text-base">
                               {data.attributes.title}
                             </h2>
-                            <p className="">{data.attributes.company}</p>
+                            <p className="text-xs sm:text-base">{data.attributes.company}</p>
                           </div>
-                          <p className="p-6">
+                          <p className="p-6 text-xs sm:text-base">
                             $
                             {Number(data.attributes.price).toLocaleString(
                               "en-US"
