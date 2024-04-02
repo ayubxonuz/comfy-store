@@ -40,12 +40,8 @@ function Cart() {
                     <p className="opacity-70 my-2 text-sm">
                       {data.data.data.attributes.company}
                     </p>
-                    <div className="flex items-center my-2">
-                      <p className="text-sm">Colors:</p>{" "}
-                      <button className={`badge w-6 h-6`}>d</button>
-                    </div>
                   </div>
-                  <div className="grid gap-y-2 w-min max-[717px]:m-2">
+                  <div className="grid w-min max-[717px]:m-2">
                     <p className="text-sm">Amount</p>
                     <select className="select my-2 select-bordered select-xs">
                       {Array.from({length: 20}, (_, index) => (
