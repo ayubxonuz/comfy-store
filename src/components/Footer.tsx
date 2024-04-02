@@ -2,7 +2,7 @@ import {Link} from "react-router-dom"
 
 function Footer() {
   return (
-    <footer className="bg-slate-200 mt-20">
+    <footer className="bg-base-300 mt-20">
       <div className="max-container p-3">
         <h6 className="text-xs sm:text-sm flex my-2 justify-center gap-x-1">
           Copyright © {new Date().getFullYear()} - All right reserved by

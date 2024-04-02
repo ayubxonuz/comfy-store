@@ -26,7 +26,7 @@ function Navbar() {
     <div className="p-2 bg-base-200">
       <nav className="max-container max-[1024px]:p-0 flex justify-between items-center">
         <NavLink
-          className="btn btn-neutral max-[1024px]:hidden text-base-100"
+          className="btn btn-neutral max-[1024px]:hidden"
           to={"/"}
         >
           C
