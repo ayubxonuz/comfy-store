@@ -5,6 +5,7 @@ import {toast} from "sonner"
 import {useAppDispatch} from "../../redux/store"
 import {setUser} from "../../redux/user/userSlice"
 import {userData} from "../../interface/allinterface"
+import {Helmet} from "react-helmet"
 
 function Register() {
   const [loading, setLoading] = useState(false)
@@ -58,6 +59,11 @@ function Register() {
 
   return (
     <div className="relative bg-base-100 flex flex-col justify-center min-h-screen overflow-hidden px-6">
+      <Helmet>
+        <title>Register page</title>
+        <meta name="description" content="App Description" />
+        <body />
+      </Helmet>
       <div className="bg-base-100 p-6 m-auto rounded-md shadow-md max-w-[600px] w-full">
         <h1 className="text-center text-3xl font-bold">Sign up</h1>
         <form onSubmit={handleSubmit} className="mt-6">

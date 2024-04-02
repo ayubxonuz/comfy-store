@@ -6,6 +6,7 @@ import day from "dayjs"
 import SectionTitle from "../components/SectionTitle"
 import {useQuery} from "@tanstack/react-query"
 import {useState} from "react"
+import {Helmet} from "react-helmet"
 
 function Orders() {
   const {userData} = useSelector((store: RootState) => store.user)
@@ -27,6 +28,11 @@ function Orders() {
 
   return (
     <>
+      <Helmet>
+        <title>Orders</title>
+        <meta name="description" content="App Description" />
+        <body />
+      </Helmet>
       {userData ? (
         <div className="mt-8">
           {data && (

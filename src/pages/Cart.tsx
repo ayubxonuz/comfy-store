@@ -3,6 +3,7 @@ import {useSelector} from "react-redux"
 import {RootState, useAppDispatch} from "../redux/store"
 import {delSelectData} from "../redux/cart/cartSlice"
 import SectionTitle from "../components/SectionTitle"
+import {Helmet} from "react-helmet"
 
 function Cart() {
   const {selectData, subtotal, shipping, orderTotal, tax} = useSelector(
@@ -12,6 +13,11 @@ function Cart() {
 
   return (
     <div>
+      <Helmet>
+        <title>Cart page</title>
+        <meta name="description" content="App Description" />
+        <body />
+      </Helmet>
       {selectData.length ? (
         <>
           <SectionTitle text="Shopping cart" />

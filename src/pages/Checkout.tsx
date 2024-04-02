@@ -7,6 +7,7 @@ import {toast} from "sonner"
 import {useNavigate} from "react-router-dom"
 import {clearSelectData} from "../redux/cart/cartSlice"
 import SectionTitle from "../components/SectionTitle"
+import {Helmet} from "react-helmet"
 
 function Checkout() {
   const {subtotal, orderTotal, shipping, tax, selectData} = useSelector(
@@ -66,6 +67,11 @@ function Checkout() {
 
   return (
     <div className="mt-9">
+      <Helmet>
+        <title>Checkout</title>
+        <meta name="description" content="App Description" />
+        <body />
+      </Helmet>
       {selectData.length ? (
         <>
           <SectionTitle text="Place Your Order" />

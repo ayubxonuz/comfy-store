@@ -1,6 +1,13 @@
+import {Helmet} from "react-helmet"
+
 function About() {
   return (
     <>
+      <Helmet>
+        <title>About page</title>
+        <meta name="description" content="App Description" />
+        <body />
+      </Helmet>
       <div className="flex mt-9 flex-wrap gap-2 sm:gap-x-6 items-center justify-center">
         <h1 className="text-4xl font-bold leading-none tracking-tight sm:text-6xl ">
           We love

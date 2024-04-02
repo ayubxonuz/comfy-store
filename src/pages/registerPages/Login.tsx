@@ -6,6 +6,7 @@ import {useAppDispatch} from "../../redux/store"
 import {setUser} from "../../redux/user/userSlice"
 import {userData} from "../../interface/allinterface"
 import {customFetch} from "../../utils/utils"
+import {Helmet} from "react-helmet"
 
 function Login() {
   const [loading, setLoading] = useState(false)
@@ -73,6 +74,11 @@ function Login() {
 
   return (
     <div className="relative bg-base-100 flex flex-col justify-center min-h-screen overflow-hidden px-6">
+      <Helmet>
+        <title>Login page</title>
+        <meta name="description" content="App Description" />
+        <body />
+      </Helmet>
       <div className="bg-base-100 p-6 m-auto rounded-md shadow-md max-w-[600px] w-full">
         <h1 className="text-center text-3xl font-bold">Login</h1>
         <form onSubmit={handleSubmit} className="mt-6">

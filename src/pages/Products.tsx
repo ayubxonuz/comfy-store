@@ -4,6 +4,7 @@ import {customFetch, formatPrice} from "../utils/utils"
 import {allData} from "../interface/allinterface"
 import {FormEvent, useState} from "react"
 import {BsFillGridFill, BsList} from "react-icons/bs"
+import {Helmet} from "react-helmet"
 
 function Products() {
   const [productContainer, setProductContainer] = useState(false)
@@ -46,6 +47,11 @@ function Products() {
 
   return (
     <>
+      <Helmet>
+        <title>Products page</title>
+        <meta name="description" content="App Description" />
+        <body />
+      </Helmet>
       <div>
         <form onSubmit={(e) => optionsFilter(e)}>
           <div className="grid grid-cols-1 rounded-lg mt-12 bg-primary-content gap-y-7 p-5">

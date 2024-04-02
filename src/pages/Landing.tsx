@@ -4,6 +4,7 @@ import {useQuery} from "@tanstack/react-query"
 import {featuredInt} from "../interface/allinterface"
 import {nanoid} from "@reduxjs/toolkit"
 import SectionTitle from "../components/SectionTitle"
+import {Helmet} from "react-helmet"
 
 function Landing() {
   const url = "/products?featured=true"
@@ -17,6 +18,11 @@ function Landing() {
 
   return (
     <>
+      <Helmet>
+        <title>Comfy store</title>
+        <meta name="description" content="App Description" />
+        <body />
+      </Helmet>
       {isLoading ? (
         <span className="loading loading-spinner flex mx-auto mt-7 loading-xs"></span>
       ) : (
