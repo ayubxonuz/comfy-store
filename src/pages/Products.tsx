@@ -55,7 +55,7 @@ function Products() {
       <div>
         <form onSubmit={(e) => optionsFilter(e)}>
           <div className="grid grid-cols-1 rounded-lg mt-12 bg-primary-content gap-y-7 p-5">
-            <div className="grid grid-cols-4 gap-x-5 ">
+            <div className="grid sm:grid-cols-2 justify-items-center md:grid-cols-3 lg:grid-cols-4 gap-x-5 ">
               <label className="form-control w-full max-w-xs">
                 <div className="label">
                   <span className="label-text">Search product</span>
@@ -117,9 +117,9 @@ function Products() {
                 </select>
               </label>
             </div>
-            <div className="grid grid-cols-4 gap-x-5 items-center justify-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-5 items-center justify-items-center">
               <div className="w-full">
-                <p className="mb-1">
+                <p className="mb-1 text-sm">
                   Select price {formatPrice(selectedPrice)}
                 </p>
                 <input
@@ -134,7 +134,7 @@ function Products() {
                 />
               </div>
               <div className="text-center">
-                <p className="mb-1">Free Shipping</p>
+                <p className="mb-1 text-sm">Free Shipping</p>
                 <input name="shipping" type="checkbox" className="checkbox" />
               </div>
               <button type="submit" className="btn btn-neutral w-full btn-sm">

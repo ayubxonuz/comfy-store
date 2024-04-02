@@ -22,18 +22,18 @@ function Cart() {
         <>
           <SectionTitle text="Shopping cart" />
           <div className="flex mt-4 max-[990px]:block justify-between">
-            <div className="grid gap-y-6">
+            <div className="grid mr-3 gap-y-6 max-[717px]:justify-items-center">
               {selectData?.map((data) => (
                 <div
                   key={data.data.data.id}
-                  className="flex max-[717px]:block gap-x-20 items-center"
+                  className="flex shadow-lg rounded-lg p-2 max-[717px]:block gap-x-16 items-center"
                 >
                   <img
-                    className="w-32 h-32 object-cover rounded-lg"
+                    className="w-36 h-32 max-[717px]:w-[300px] max-[717px]:h-[250px] object-cover rounded-lg"
                     src={data.data.data.attributes.image}
                     alt=""
                   />
-                  <div className="max-w-28 w-full">
+                  <div className="w-40 max-[717px]:m-2">
                     <p className="capitalize font-medium">
                       {data.data.data.attributes.title}
                     </p>
@@ -45,7 +45,7 @@ function Cart() {
                       <button className={`badge w-6 h-6`}>d</button>
                     </div>
                   </div>
-                  <div className="grid gap-y-2 w-min">
+                  <div className="grid gap-y-2 w-min max-[717px]:m-2">
                     <p className="text-sm">Amount</p>
                     <select className="select my-2 select-bordered select-xs">
                       {Array.from({length: 20}, (_, index) => (
@@ -63,7 +63,7 @@ function Cart() {
                       Remove
                     </button>
                   </div>
-                  <p className="font-bold text-lg opacity-80">
+                  <p className="font-bold text-lg opacity-80 max-[717px]:m-2">
                     $
                     {(+data.data.data.attributes.price)
                       .toFixed(2)

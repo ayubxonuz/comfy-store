@@ -61,7 +61,7 @@ function Orders() {
                         "hh:mm a - MMM Do, YYYY"
                       )
                       return (
-                        <tr key={data.id}>
+                        <tr className="text-xs sm:text-sm" key={data.id}>
                           <td>{data.attributes.name}</td>
                           <td>{data.attributes.address}</td>
                           <td>{data.attributes.numItemsInCart}</td>
@@ -79,7 +79,7 @@ function Orders() {
                     setPage((page) => page - 1)
                   }}
                   disabled={page == 1}
-                  className="join-item btn btn-outline"
+                  className="join-item btn-sm sm:btn-md btn btn-outline"
                 >
                   Previous page
                 </button>
@@ -89,7 +89,7 @@ function Orders() {
                     setPage((page) => page + 1)
                   }}
                   disabled={pageSize == page}
-                  className="join-item btn btn-outline"
+                  className="join-item btn-sm sm:btn-md  btn btn-outline"
                 >
                   Next
                 </button>
